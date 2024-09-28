@@ -3,14 +3,17 @@ with
         select *
         from {{ ref('stg_erp__produtos') }}
     )
+
     , categorias as (
         select *
         from {{ ref('stg_erp__categorias') }}
     )
+
     , fornecedores as (
         select *
         from {{ ref('stg_erp__fornecedores') }}
     )
+
     , produtos_enriquecido as (
         select
             produtos.PK_PRODUTO
@@ -30,5 +33,6 @@ with
         left join categorias on categorias.pk_categoria = produtos.fk_categoria
         left join fornecedores on fornecedores.pk_fornecedor = produtos.fk_fornecedor
     )
+
 select *
 from produtos_enriquecido
