@@ -1,5 +1,4 @@
 version: 2
-
 models:
   - name: int_produtos_enriquecida
     description: Tabela de intermediário para enriquecer os dados da dimensão produto.
