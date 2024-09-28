@@ -1,30 +1,22 @@
 with
-    fonte_funcionarios as (
-        select *
-        from {{ source('erp_northwind', 'employee') }}
-    )
-
-    , renomeacao as (
+    renomeado as (
         select
-            cast(ID as int) as pk_funcionario
-            , cast(REPORTSTO as int) as fk_gerente
-            , FIRSTNAME || ' ' || LASTNAME as nome_funcionario
-            , cast(TITLE as varchar) as cargo_funcionario
-            , cast(BIRTHDATE as date) as dt_nascimento_funcionario
-            , cast(HIREDATE as date) as  dt_contratacao
-            , cast(CITY as varchar) as cidade_funcionario
-            , cast(REGION as varchar) as regiao_funcionario
-            , cast(COUNTRY as varchar) as pais_funcionario
-            --, cast(TITLEOFCOURTESY as varchar)
-            --, cast(ADDRESS as varchar) 
-            --, cast(POSTALCODE as varchar) 
-            --, cast(HOMEPHONE as varchar)
-            --, cast(EXTENSION as varchar)
-            --, cast(PHOTO as varchar)
-            --, cast(NOTES as varchar)
-            --, cast(PHOTOPATH as varchar)
-        from fonte_funcionarios
+            cast(ID as int) as pk_produto
+            , cast(SUPPLIERID as int) as fk_fornecedor 
+            , cast(CATEGORYID as int) as fk_categoria
+            , cast(PRODUCTNAME as string) as nm_produto
+            , cast(QUANTITYPERUNIT as string) as quantidade_por_unidade
+            , cast(UNITPRICE as numeric(18,2)) as preco_por_unidade
+            , cast(UNITSINSTOCK as int) as unidade_em_estoque
+            , cast(UNITSONORDER as int) as unidade_por_pedido
+            , cast(REORDERLEVEL as int) as nivel_de_pedido
+            , case
+                when discontinued = '1' then true
+                when discontinued = '0' then false
+                else null
+            end as eh_discontinuado
+        from {{ source('erp_northwind', 'product') }}
     )
 
 select *
-from renomeacao
+from renomeado
