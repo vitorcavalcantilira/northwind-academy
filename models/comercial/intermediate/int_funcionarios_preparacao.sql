@@ -17,7 +17,7 @@ with
             , funcionarios.PAIS_FUNCIONARIO
         from funcionarios
         left join funcionarios as gerentes
-            on funcionarios.fk_gerente = gerentes.pk_funcionario
+            on funcionarios.fk_gerente = gerentes.pk_funcionario -- Aqui foi feita a combinação na mesma tabela. Todo que tem a chave estrangeira (coluna gerente) serão pesquisados na coluna primária funcionário (da mesma tabela)
     )
 
 select *

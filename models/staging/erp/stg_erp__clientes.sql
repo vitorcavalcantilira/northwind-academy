@@ -12,7 +12,7 @@ with
             , cast(CONTACTTITLE as varchar) as cargo_cliente
             , cast(CITY as varchar) as cidade_cliente
             , cast(REGION as varchar) as regiao_cliente
-            , cast(COUNTRY as varchar)
+            , cast(COUNTRY as varchar) as paises_cliente
             --, cast(ADDRESS as varchar)
             --, cast(POSTALCODE as varchar)
             --, cast(PHONE as varchar)
