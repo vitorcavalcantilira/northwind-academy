@@ -1,8 +1,8 @@
 with
-    matriz_clientes as (
+    fonte_clientes as (
         select *
         from {{ ref('stg_erp__clientes') }}
     )
 
 select *
-from matriz_clientes
+from fonte_clientes
