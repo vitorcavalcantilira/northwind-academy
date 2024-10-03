@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_erp__clientes
+    description: Tabela de preparação dos dados brutos da tabela C.
+    columns:
+      - name: pk_cliente
+        description: blablabla.
+        data_tests:
+          - unique
+          - not_null       

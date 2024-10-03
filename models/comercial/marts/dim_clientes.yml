@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: Tabela clientes.
+    columns:
+      
+      - name: pk_cliente
+        description: blablabla.
+        
+      - name: nome_empresa
+        description: blablabla.
+        
+      - name: nome_cliente
+        description: blablabla.
+        
+      - name: cargo_cliente
+        description: blablabla.
+        
+      - name: cidade_cliente
+        description: blablabla.
+        
+      - name: regiao_cliente
+        description: blablabla.
+        
+      - name: paises_cliente
+        description: blablabla.
+        

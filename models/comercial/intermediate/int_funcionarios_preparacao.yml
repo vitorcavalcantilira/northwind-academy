@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_funcionarios_preparacao
-    description: Tabela de intermediário para designar o gerente do funcionário.
+    description: Tabela intermidária para designar o gerente do funcionário.
     columns:
       - name: PK_FUNCIONARIO
         description: blablabla.
@@ -14,7 +14,7 @@ models:
         description: blablabla.
         
       - name: NOME_FUNCIONARIO
-        description: blablabla.
+        description: Nome do Gerente após fazer o Left join na mesma tabela FUNCIONÁRIO.
       
       - name: NOME_GERENTE
         description: blablabla.

@@ -19,3 +19,6 @@ sources:
       - name: supplier
       - name: _order_    
       - name: orderdetail  
+      - name: customer
+      
+
