@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_erp__transportadoras
+    description: Tabela de preparação dos dados brutos da tabela transportadoras.
+    columns:
+      - name: pk_transportadora
+        description: blablabla.
+        data_tests:
+          - unique
+          - not_null       
