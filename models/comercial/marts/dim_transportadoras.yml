@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_transportadoras
+    description: Tabela Transportadora.
+    columns:
+      
+      - name: pk_transportadora
+        description: blablabla.
+        
+      - name: nome_companhia
+        description: blablabla.
+        
+    
